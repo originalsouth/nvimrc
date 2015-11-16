@@ -86,7 +86,7 @@ au FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
 "noremap <C-C> "+y 
 "noremap <C-X> "+x 
 "noremap <C-P> "+p
-set clipboard+=unnamedplus
+set clipboard^=unnamed,unnamedplus
 command Clip r !parcellite -c
 
 ""Change windows without <C-w> first
