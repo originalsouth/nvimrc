@@ -37,8 +37,12 @@ import ycm_core
 flags = [
 '-Wall',
 '-Wextra',
-'-Werror',
-'-DNDEBUG',
+#'-Werror',
+#'-Wc++98-compat',
+#'-Wno-long-long',
+#'-Wno-variadic-macros',
+'-fexceptions',
+#'-DNDEBUG',
 # You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
 # source code needs it.
 '-DUSE_CLANG_COMPLETER',
@@ -55,36 +59,28 @@ flags = [
 # For a C project, you would set this to 'c' instead of 'c++'.
 '-x',
 'c++',
-'-isystem',
-'../BoostParts',
-'-isystem',
+#'-isystem',
+#'../BoostParts',
+#'-isystem',
 # This path will only work on OS X, but extra paths that don't exist are not
 # harmful
-'/System/Library/Frameworks/Python.framework/Headers',
-'-isystem',
-'../llvm/include',
-'-isystem',
-'../llvm/tools/clang/include',
-'-I',
-'.',
-'-I',
-'./ClangCompleter',
-'-isystem',
-'./tests/gmock/gtest',
-'-isystem',
-'./tests/gmock/gtest/include',
-'-isystem',
-'./tests/gmock',
-'-isystem',
-'./tests/gmock/include',
-'-isystem',
-'/usr/include',
-'-isystem',
-'/usr/local/include',
-'-isystem',
-'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1',
-'-isystem',
-'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
+#'/System/Library/Frameworks/Python.framework/Headers',
+#'-isystem',
+#'../llvm/include',
+#'-isystem',
+#'../llvm/tools/clang/include',
+#'-I',
+#'.',
+#'-I',
+#'./ClangCompleter',
+#'-isystem',
+#'./tests/gmock/gtest',
+#'-isystem',
+#'./tests/gmock/gtest/include',
+#'-isystem',
+#'./tests/gmock',
+#'-isystem',
+#'./tests/gmock/include',
 ]
 
 
@@ -190,4 +186,3 @@ def FlagsForFile( filename, **kwargs ):
     'flags': final_flags,
     'do_cache': True
   }
-

@@ -2,14 +2,13 @@ let g:python_host_prog='/usr/bin/python2'
 let g:python_host_skip_check = 1
 
 call plug#begin()
+Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang' }
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
-Plug 'benekastah/neomake', { 'on': 'NeomakeToggle' }
 Plug 'luochen1990/rainbow'
 Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/syntastic'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
@@ -74,11 +73,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_html_checkers = ['w3']
 
-""Settings for Neomake
-"let neomake_blacklist = ['cpp']
-"au BufRead,BufNewFile * if index(neomake_blacklist,&ft)<0 | Neomake
-"let g:neomake_python_enabled_makers = ['pyflakes']
-
 ""Strip dead spaces
 au FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -87,10 +81,9 @@ au FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
 "noremap <C-X> "+x 
 "noremap <C-P> "+p
 set clipboard^=unnamed,unnamedplus
-command Clip r !parcellite -c
 
 ""Change windows without <C-w> first
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
