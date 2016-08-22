@@ -3,7 +3,7 @@ let g:python_host_skip_check = 1
 
 call plug#begin()
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang --system-boost' }
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
@@ -74,7 +74,7 @@ let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_html_checkers = ['w3']
 
 ""Strip dead spaces
-au FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+au FileType c,cpp,java,php,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 ""Keyboard shortcuts to cut/copy/paste from the X11 clipboard
 "noremap <C-C> "+y 
