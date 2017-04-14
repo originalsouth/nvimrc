@@ -2,17 +2,19 @@ let g:python_host_prog='/usr/bin/python2'
 let g:python_host_skip_check = 1
 
 call plug#begin()
-Plug 'scrooloose/syntastic'
+"Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang' }
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'luochen1990/rainbow'
-Plug 'rust-lang/rust.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/HJKL'
 call plug#end()
 filetype indent plugin on
@@ -53,7 +55,10 @@ set splitbelow "Horizontal splits below
 set pastetoggle=<F2> "Paste toggle (for indentation in terminal)
 set hidden "Hide buffer instead of closing it
 
-" Arduino files
+""Import airline fonts
+let g:airline_powerline_fonts = 1
+
+""Arduino files
 au BufRead,BufNewFile *.pde,*.ino set filetype=c++
 
 ""Activate rainbow brackets
@@ -66,12 +71,19 @@ let g:ycm_confirm_extra_conf = 0
 "let g:ycm_collect_identifiers_from_tags_files = 1
 
 ""Settings for Syntastic
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler_options = '-Wall -Wextra -std=c++11'
-let g:syntastic_check_on_open = 1
-let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_html_checkers = ['w3']
+"let g:syntastic_cpp_check_header = 1
+"let g:syntastic_cpp_auto_refresh_includes = 1
+"let g:syntastic_cpp_compiler_options = '-Wall -Wextra -std=c++14'
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_quiet_messages = { "type": "style" }
+"let g:syntastic_html_checkers = ['w3']
+
+""Settings for ALE
+let g:ale_linters = {'c': ['clang']}
+let g:ale_c_clang_options = '-std=c11 -Wall -Wextra'
+let g:ale_linters = {'cpp': ['clang']}
+let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
+let g:ale_linters = {'python': ['pylint']}
 
 ""Strip dead spaces
 au FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
