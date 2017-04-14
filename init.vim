@@ -86,7 +86,7 @@ let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
 let g:ale_linters = {'python': ['pylint']}
 
 ""Strip dead spaces
-au FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+au FileType c,cpp,java,php,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 ""Keyboard shortcuts to cut/copy/paste from the X11 clipboard
 "noremap <C-C> "+y 
