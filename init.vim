@@ -4,12 +4,13 @@ let g:python_host_skip_check = 1
 call plug#begin()
 "Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --tern-completer --system-boost --system-libclang' }
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'luochen1990/rainbow'
 Plug 'sjl/gundo.vim'
+Plug 'severin-lemaignan/vim-minimap'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
