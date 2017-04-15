@@ -3,6 +3,8 @@ let g:python_host_skip_check = 1
 
 call plug#begin()
 "Plug 'vim-syntastic/syntastic'
+Plug 'junegunn/fzf', {'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --tern-completer --system-boost --system-libclang' }
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
@@ -10,7 +12,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'luochen1990/rainbow'
 Plug 'sjl/gundo.vim'
-Plug 'severin-lemaignan/vim-minimap'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
@@ -58,6 +59,7 @@ set hidden "Hide buffer instead of closing it
 
 ""Import airline fonts
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 ""Arduino files
 au BufRead,BufNewFile *.pde,*.ino set filetype=c++
@@ -87,7 +89,7 @@ let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
 let g:ale_linters = {'python': ['pylint']}
 
 ""Strip dead spaces
-au FileType c,cpp,java,php,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
+au FileType c,cpp,java,php,js,jl,rs,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "" Auto spell for tex files
 au FileType tex set spell
