@@ -88,6 +88,10 @@ let g:ale_linters = {'python': ['pylint']}
 ""Strip dead spaces
 au FileType c,cpp,java,php,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+"" Auto spell for tex files
+au FileType tex set spell
+au FileType tex syntax spell toplevel
+
 ""Keyboard shortcuts to cut/copy/paste from the X11 clipboard
 "noremap <C-C> "+y 
 "noremap <C-X> "+x 
