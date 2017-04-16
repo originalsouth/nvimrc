@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', {'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --tern-completer --system-boost --system-libclang' }
+Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
@@ -57,7 +58,7 @@ set splitbelow "Horizontal splits below
 set pastetoggle=<F2> "Paste toggle (for indentation in terminal)
 set hidden "Hide buffer instead of closing it
 
-""Import airline fonts
+""Config vim airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -67,9 +68,17 @@ au BufRead,BufNewFile *.pde,*.ino set filetype=c++
 ""Activate rainbow brackets
 let g:rainbow_active = 1 
 
+""Key bindings
+nmap <M-u> :GundoToggle<CR>
+nmap <M-t> :TagbarToggle<CR>
+nmap <M-o> :FZF<CR>
+nmap <M-c> :vs +te<CR>
+tnoremap <C-\> <C-\><C-n>
+
 ""Settings for YCM
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_seed_identifiers_with_syntax = 1
 "let g:ycm_always_populate_location_list = 1
 "let g:ycm_collect_identifiers_from_tags_files = 1
 
@@ -82,11 +91,8 @@ let g:ycm_confirm_extra_conf = 0
 "let g:syntastic_html_checkers = ['w3']
 
 ""Settings for ALE
-let g:ale_linters = {'c': ['clang']}
 let g:ale_c_clang_options = '-std=c11 -Wall -Wextra'
-let g:ale_linters = {'cpp': ['clang']}
 let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
-let g:ale_linters = {'python': ['pylint']}
 
 ""Strip dead spaces
 au FileType c,cpp,java,php,js,jl,rs,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
