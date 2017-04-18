@@ -72,7 +72,7 @@ let g:rainbow_active = 1
 nmap <M-u> :GundoToggle<CR>
 nmap <M-t> :TagbarToggle<CR>
 nmap <M-o> :FZF<CR>
-nmap <M-c> :vs +te<CR>
+nmap <C-c> :vs +te<CR>
 tnoremap <C-\> <C-\><C-n>
 
 ""Settings for YCM
