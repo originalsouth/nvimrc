@@ -1,12 +1,13 @@
-let g:python_host_prog='/usr/bin/python2'
+let g:python_host_prog='/usr/bin/python3'
 let g:python_host_skip_check = 1
 
 call plug#begin()
 "Plug 'vim-syntastic/syntastic'
-Plug 'junegunn/fzf', {'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --tern-completer --system-boost --system-libclang' }
+Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --clang-completer --tern-completer --system-boost --system-libclang'}
+Plug 'arakashic/chromatica.nvim'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
@@ -91,9 +92,17 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:syntastic_quiet_messages = { "type": "style" }
 "let g:syntastic_html_checkers = ['w3']
 
+""Settings for Chromatica
+let g:chromatica#libclang_path='/usr/lib/libclang.so'
+let g:chromatica#enable_at_startup=1
+let g:chromatica#highlight_feature_level=1
+let g:chromatica#responsive_mode=1
+
 ""Settings for ALE
 let g:ale_c_clang_options = '-std=c11 -Wall -Wextra'
 let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
+let g:ale_linters = { 'python': ['flake8'] }
+let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 
 ""Strip dead spaces
 au FileType c,cpp,java,php,js,jl,rs,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
