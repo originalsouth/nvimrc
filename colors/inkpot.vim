@@ -86,7 +86,7 @@ hi doxygenspecialonelinedesc   guifg=#ad600b    guibg=NONE     guisp=NONE    gui
 hi FoldColumn       guifg=#8b8bcd    guibg=#2e2e2e   guisp=#2e2e2e      gui=NONE
 hi Folded           guifg=#cfcfcd    guibg=#4b208f   guisp=#4b208f      gui=NONE
 hi LineNr           guifg=#8b8bcd    guibg=#2e2e2e   guisp=#2e2e2e      gui=NONE
-hi MatchParen       guifg=#404040    guibg=#8fff8b   guisp=#8fff8b      gui=NONE
+hi MatchParen       guifg=#404040    guibg=#8fff8b   guisp=#8fff8b      gui=bold
 hi NonText          guifg=#8b8bcd    guibg=NONE      guisp=NONE         gui=NONE
 hi Normal           guifg=#cfbfad    guibg=#1e1e27   guisp=#1e1e27      gui=NONE
 hi PreCondit        guifg=#409090    guibg=NONE      guisp=NONE         gui=NONE
