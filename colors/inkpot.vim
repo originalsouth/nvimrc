@@ -7,10 +7,10 @@ hi Search       guifg=#303030    guibg=#cd8b60   guisp=#cd8b60  gui=NONE
 hi IncSearch    guifg=#303030    guibg=#cd8b60   guisp=#cd8b6   gui=NONE
 
 "Msg
-hi ErrorMsg     guifg=#ff0000    guibg=#ce4e4e   guisp=#ce4e4e  gui=NONE
+hi ErrorMsg     guifg=#ffffff    guibg=#ce4e4e   guisp=#ce4e4e  gui=bold
 hi ModeMsg      guifg=#7e7eae    guibg=NONE      guisp=NONE     gui=NONE
 hi MoreMsg      guifg=#7e7eae    guibg=NONE      guisp=NONE     gui=NONE
-hi WarningMsg   guifg=#0000ff    guibg=#ce8e4e   guisp=#ce8e4e  gui=NONE
+hi WarningMsg   guifg=#ffffff    guibg=#ce8e4e   guisp=#ce8e4e  gui=bold
 
 "Cursor
 hi Cursor       guifg=#404040   guibg=#8b8bff    guisp=#8b8bff gui=NONE
@@ -25,7 +25,6 @@ hi DefinedName     guifg=#b878e3     guibg=NONE      guisp=NONE      gui=NONE
 hi Delimiter       guifg=#c080d0     guibg=NONE      guisp=NONE      gui=NONE
 hi Directory       guifg=#00ff8b     guibg=NONE      guisp=NONE      gui=NONE
 hi EnumerationName guifg=#9ccfe8     guibg=NONE      guisp=NONE      gui=NONE
-hi Error           guifg=#ffffff     guibg=#6e2e2e   guisp=#6e2e2e   gui=NONE
 hi Exception       guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
 hi Function        guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE 
 hi Identifier      guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
@@ -42,6 +41,10 @@ hi Tag             guifg=#c080d0     guibg=NONE      guisp=NONE      gui=NONE
 hi Todo            guifg=#303030     guibg=#d0a060   guisp=#d0a060   gui=NONE
 hi Typedef         guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
 hi Union           guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
+
+"Error
+hi Error           guifg=#ffffff     guibg=#ce4e4e   guisp=#6e2e2e   gui=NONE
+hi Warning         guifg=#ffffff     guibg=#ce8e4e   guisp=#6e2e2e   gui=NONE
 
 "Types
 hi Boolean           guifg=#808bed   guibg=NONE      guisp=NONE      gui=NONE
@@ -65,9 +68,9 @@ hi DiffText     guifg=#ffffcd    guibg=#4a2a4a   guisp=#4a2a4a   gui=NONE
 
 "Spell
 "hi SpellRare    -- no settings --
-"hi SpellCap     -- no settings --
-hi SpellLocal    guifg=NONE      guibg=#8888ff     guisp=#8888ff  gui=undercurl
-hi SpellBad      guifg=NONE      guibg=#331111     guisp=#ff0000  gui=undercurl
+hi SpellCap      guifg=#ffa500   guibg=NONE        guisp=#ffa500  gui=bold,undercurl
+hi SpellLocal    guifg=NONE      guibg=#8888ff     guisp=#8888ff  gui=bold,undercurl
+hi SpellBad      guifg=#ff0000   guibg=NONE        guisp=#ff0000  gui=bold,undercurl
 
 "Doxygen
 hi doxygenbrief                guifg=#fdab60    guibg=NONE     guisp=NONE    gui=NONE
