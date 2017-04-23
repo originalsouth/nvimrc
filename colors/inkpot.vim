@@ -3,8 +3,8 @@ set background=dark
 let g:colors_name = "inkpotim_neovim"
 
 "Search
-hi Search       guifg=#303030    guibg=#cd8b60   guisp=#cd8b60  gui=NONE
-hi IncSearch    guifg=#303030    guibg=#cd8b60   guisp=#cd8b6   gui=NONE
+hi Search       guifg=#303030    guibg=#cd8b60   guisp=#cd8b60  gui=bold
+hi IncSearch    guifg=#303030    guibg=#cd8b60   guisp=#cd8b6   gui=bold
 
 "Msg
 hi ErrorMsg     guifg=#ffffff    guibg=#ce4e4e   guisp=#ce4e4e  gui=bold
@@ -49,16 +49,20 @@ hi Warning         guifg=#ffffff     guibg=#ce8e4e   guisp=#6e2e2e   gui=NONE
 "Types
 hi Boolean           guifg=#808bed   guibg=NONE      guisp=NONE      gui=NONE
 hi Character         guifg=#ffcd8b   guibg=NONE      guisp=NONE      gui=NONE 
-hi Comment           guifg=#cd8b00   guibg=NONE      guisp=NONE      gui=NONE
-hi Constant          guifg=#ff8cff   guibg=NONE      guisp=NONE      gui=NONE
+hi Comment           guifg=#cd8b00   guibg=NONE      guisp=NONE      gui=bold
+hi Constant          guifg=#aa8c11   guibg=NONE      guisp=NONE      gui=NONE
 hi EnumerationValue  guifg=#6c7fcc   guibg=NONE      guisp=NONE      gui=NONE
 hi Float             guifg=#eb2121   guibg=NONE      guisp=NONE      gui=NONE
 hi Number            guifg=#f0ad6d   guibg=NONE      guisp=NONE      gui=NONE
-hi Operator          guifg=#ff8bff   guibg=NONE      guisp=NONE      gui=NONE
+hi Operator          guifg=#ff4eff   guibg=NONE      guisp=NONE      gui=NONE
 hi SpecialChar       guifg=#c080d0   guibg=#404040   guisp=#404040   gui=NONE
-hi String            guifg=#ffcd8b   guibg=#404040   guisp=#404040   gui=NONE
+hi String            guifg=#ffcd8b   guibg=#404040   guisp=#404040   gui=bold
 hi Type              guifg=#ff8bff   guibg=NONE      guisp=NONE      gui=NONE
-hi cspecialcharacter guifg=#c080d0   guibg=#404040   guisp=#404040   gui=NONE
+
+"C
+hi cformat           guifg=#c080d0    guibg=#404040   guisp=#404040      gui=bold
+hi cspecialcharacter guifg=#c080d0    guibg=#404040   guisp=#404040      gui=NONE
+hi cursorim          guifg=#404040    guibg=#8b8bff   guisp=#8b8bff      gui=NONE
 
 "Diff
 hi DiffAdd      guifg=#ffffcd    guibg=#306d30   guisp=#306d30   gui=NONE
@@ -68,9 +72,9 @@ hi DiffText     guifg=#ffffcd    guibg=#4a2a4a   guisp=#4a2a4a   gui=NONE
 
 "Spell
 "hi SpellRare    -- no settings --
-hi SpellCap      guifg=#ffa500   guibg=NONE        guisp=#ffa500  gui=bold,undercurl
-hi SpellLocal    guifg=NONE      guibg=#8888ff     guisp=#8888ff  gui=bold,undercurl
-hi SpellBad      guifg=#ff0000   guibg=NONE        guisp=#ff0000  gui=bold,undercurl
+hi SpellCap      guifg=#ffa500   guibg=NONE     guisp=#ffa500  gui=bold,undercurl
+hi SpellLocal    guifg=#8888ff   guibg=NONE     guisp=#8888ff  gui=bold,undercurl
+hi SpellBad      guifg=#ff0000   guibg=NONE     guisp=#ff0000  gui=bold,undercurl
 
 "Doxygen
 hi doxygenbrief                guifg=#fdab60    guibg=NONE     guisp=NONE    gui=NONE
@@ -101,8 +105,6 @@ hi Underlined       guifg=#df9f2d    guibg=NONE      guisp=NONE         gui=NONE
 hi VertSplit        guifg=#b9b9b9    guibg=#3e3e5e   guisp=#3e3e5e      gui=NONE
 hi Visual           guifg=#eeeeee    guibg=#4e4e8f   guisp=#4e4e8f      gui=NONE
 hi WildMenu         guifg=#eeeeee    guibg=#6e6eaf   guisp=#6e6eaf      gui=NONE
-hi cformat          guifg=#c080d0    guibg=#404040   guisp=#404040      gui=NONE
-hi cursorim         guifg=#404040    guibg=#8b8bff   guisp=#8b8bff      gui=NONE
 hi lcursor          guifg=#404040    guibg=#8fff8b   guisp=#8fff8b      gui=NONE
 hi taglisttagname   guifg=#808bed    guibg=NONE      guisp=NONE         gui=NONE
 

@@ -7,9 +7,10 @@ Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arakashic/chromatica.nvim'
 Plug 'arecarn/crunch.vim'
-Plug 'chrisbra/Colorizer'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim'
@@ -79,7 +80,8 @@ nmap <M-u> :GundoToggle<CR>
 nmap <M-t> :TagbarToggle<CR>
 nmap <M-o> :FZF<CR>
 nmap <C-c> :vs +te<CR>
-tnoremap <C-\> <C-\><C-n>
+tnoremap <M-\> <C-\><C-n>
+imap <M-\> <Esc>
 
 ""Settings for YCM
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
