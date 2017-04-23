@@ -49,18 +49,18 @@ hi Warning         guifg=#ffffff     guibg=#ce8e4e   guisp=#6e2e2e   gui=NONE
 "Types
 hi Boolean           guifg=#808bed   guibg=NONE      guisp=NONE      gui=NONE
 hi Character         guifg=#ffcd8b   guibg=NONE      guisp=NONE      gui=NONE 
-hi Comment           guifg=#cd8b00   guibg=NONE      guisp=NONE      gui=bold
+hi Comment           guifg=#cd8b00   guibg=NONE      guisp=NONE      gui=NONE
 hi Constant          guifg=#aa8c11   guibg=NONE      guisp=NONE      gui=NONE
 hi EnumerationValue  guifg=#6c7fcc   guibg=NONE      guisp=NONE      gui=NONE
 hi Float             guifg=#eb2121   guibg=NONE      guisp=NONE      gui=NONE
 hi Number            guifg=#f0ad6d   guibg=NONE      guisp=NONE      gui=NONE
 hi Operator          guifg=#ff4eff   guibg=NONE      guisp=NONE      gui=NONE
 hi SpecialChar       guifg=#c080d0   guibg=#404040   guisp=#404040   gui=NONE
-hi String            guifg=#ffcd8b   guibg=#404040   guisp=#404040   gui=bold
+hi String            guifg=#ffcd8b   guibg=#404040   guisp=#404040   gui=NONE
 hi Type              guifg=#ff8bff   guibg=NONE      guisp=NONE      gui=NONE
 
 "C
-hi cformat           guifg=#c080d0    guibg=#404040   guisp=#404040      gui=bold
+hi cformat           guifg=#a040d0    guibg=#404040   guisp=#404040      gui=NONE
 hi cspecialcharacter guifg=#c080d0    guibg=#404040   guisp=#404040      gui=NONE
 hi cursorim          guifg=#404040    guibg=#8b8bff   guisp=#8b8bff      gui=NONE
 
