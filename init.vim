@@ -106,9 +106,10 @@ let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 ""Strip dead spaces
 au FileType c,cpp,java,php,js,jl,rs,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
-"" Auto spell for tex files
+""Auto spell
 au FileType tex set spell
 au FileType tex syntax spell toplevel
+au TermOpen * set nospell
 
-""Sync x clipboard with vim
+""Sync X clipboard with vim
 set clipboard^=unnamed,unnamedplus
