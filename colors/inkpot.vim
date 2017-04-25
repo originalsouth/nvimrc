@@ -93,6 +93,7 @@ hi LineNr           guifg=#8b8bcd    guibg=#2e2e2e   guisp=#2e2e2e      gui=NONE
 hi MatchParen       guifg=#404040    guibg=#8fff8b   guisp=#8fff8b      gui=bold
 hi NonText          guifg=#8b8bcd    guibg=NONE      guisp=NONE         gui=NONE
 hi Normal           guifg=#cfbfad    guibg=#1e1e27   guisp=#1e1e27      gui=NONE
+hi Conceal          guifg=#cfbfad    guibg=#1e1e27   guisp=#1e1e27      gui=NONE
 hi PreCondit        guifg=#409090    guibg=NONE      guisp=NONE         gui=NONE
 hi PreProc          guifg=#409090    guibg=NONE      guisp=NONE         gui=NONE
 hi Question         guifg=#ffcd00    guibg=NONE      guisp=NONE         gui=NONE
