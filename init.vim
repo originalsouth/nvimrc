@@ -74,6 +74,7 @@ au BufRead,BufNewFile *.pde,*.ino set filetype=c++
 
 ""Activate rainbow brackets
 let g:rainbow_active = 1 
+let g:rainbow_conf = { 'guifgs' : [ '#aaaaaa', '#00aa00', '#00aaaa', '#aaaa00', '#aa00aa', '#0000aa', '#aa0000' ] }
 
 ""Key bindings
 nmap <M-u> :GundoToggle<CR>
