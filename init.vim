@@ -7,7 +7,6 @@ Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arakashic/chromatica.nvim'
 Plug 'arecarn/crunch.vim'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
