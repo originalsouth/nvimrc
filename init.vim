@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/HJKL'
 Plug 'w0rp/ale'
+Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 "Use colorscheme
@@ -102,6 +103,13 @@ let g:ale_c_clang_options = '-std=c11 -Wall -Wextra'
 let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
 let g:ale_linters = { 'python': ['flake8'] }
 let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
+
+""Setting for smooth scrolling
+let g:comfortable_motion_no_default_key_mappings = 0
+nnoremap <silent> <M-j> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <M-k> :call comfortable_motion#flick(-100)<CR>
+nnoremap <silent> <M-J> :call comfortable_motion#flick(200)<CR>
+nnoremap <silent> <M-K> :call comfortable_motion#flick(-200)<CR>
 
 ""Strip dead spaces
 au FileType c,cpp,java,php,js,jl,rs,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
