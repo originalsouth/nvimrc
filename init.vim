@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
+Plug 'metakirby5/codi.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -81,6 +82,7 @@ nmap <M-u> :GundoToggle<CR>
 nmap <M-t> :TagbarToggle<CR>
 nmap <M-o> :FZF<CR>
 nmap <C-c> :vs +te<CR>
+nmap <M-c> :Codi<CR>
 tnoremap <M-\> <C-\><C-n>
 imap <M-\> <Esc>
 
@@ -104,7 +106,7 @@ let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
 let g:ale_linters = { 'python': ['flake8'] }
 let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 
-""Setting for smooth scrolling
+""Settings for smooth scrolling
 let g:comfortable_motion_no_default_key_mappings = 0
 nnoremap <silent> <M-j> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <M-k> :call comfortable_motion#flick(-100)<CR>
