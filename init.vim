@@ -12,8 +12,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
-Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
@@ -78,7 +78,7 @@ let g:rainbow_active = 1
 let g:rainbow_conf = { 'guifgs' : [ '#aaaaaa', '#00aa00', '#00aaaa', '#aaaa00', '#aa00aa', '#0000aa', '#aa0000' ] }
 
 ""Key bindings
-nmap <M-u> :GundoToggle<CR>
+nmap <M-u> :UndotreeToggle<CR>
 nmap <M-t> :TagbarToggle<CR>
 nmap <M-o> :FZF<CR>
 nmap <C-c> :vs +te<CR>
