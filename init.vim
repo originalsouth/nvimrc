@@ -113,8 +113,11 @@ nnoremap <silent> <M-k> :call comfortable_motion#flick(-100)<CR>
 nnoremap <silent> <M-J> :call comfortable_motion#flick(200)<CR>
 nnoremap <silent> <M-K> :call comfortable_motion#flick(-200)<CR>
 
+"" Julia filetype support
+autocmd BufRead,BufNewFile *.jl :set filetype=julia
+
 ""Strip dead spaces
-au FileType c,cpp,java,php,js,jl,rs,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
+au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 ""Auto spell
 au FileType tex set spell
