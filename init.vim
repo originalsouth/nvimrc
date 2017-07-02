@@ -2,6 +2,7 @@ let g:python_host_prog='/usr/bin/python3'
 let g:python_host_skip_check = 1
 
 call plug#begin()
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --clang-completer --tern-completer --system-libclang'}
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
