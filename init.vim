@@ -1,5 +1,5 @@
-let g:python_host_prog='/usr/bin/python3'
-let g:python_host_skip_check = 1
+let g:python3_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
 
 call plug#begin()
 Plug 'JuliaEditorSupport/julia-vim'
@@ -17,6 +17,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
@@ -88,6 +89,11 @@ nmap <C-c> :vs +te<CR>
 nmap <M-c> :Codi<CR>
 tnoremap <M-\> <C-\><C-n>
 imap <M-\> <Esc>
+
+""Use ag instead of ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 ""Settings for YCM
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
