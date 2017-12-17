@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
-Plug 'lyuts/vim-rtags'
+"Plug 'lyuts/vim-rtags'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
