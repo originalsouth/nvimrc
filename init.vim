@@ -82,7 +82,7 @@ let g:rainbow_conf = { 'guifgs' : [ '#aaaaaa', '#00aa00', '#00aaaa', '#aaaa00', 
 
 ""Key bindings
 nmap <M-u> :UndotreeToggle<CR>
-nmap <M-t> :TagbarToggle<CR>
+nmap <M-m> :TagbarToggle<CR>
 nmap <M-o> :FZF<CR>
 nmap <C-c> :vs +te<CR>
 nmap <M-c> :Codi<CR>
@@ -96,7 +96,7 @@ nmap <M-l> :bn<CR>
 
 ""Use fzf binding
 nnoremap <C-t> :Tags <c-r><c-w><cr>
-nnoremap <C-r> :Ag <c-r><c-w><cr>
+nnoremap <M-t> :Ag <c-r><c-w><cr>
 
 ""Settings for YCM
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
