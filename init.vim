@@ -13,11 +13,10 @@ Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
+Plug 'lyuts/vim-rtags'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
@@ -90,10 +89,14 @@ nmap <M-c> :Codi<CR>
 tnoremap <M-\> <C-\><C-n>
 imap <M-\> <Esc>
 
-""Use ag instead of ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+""Easy buffer switching
+nmap <M-k> :bd<CR>
+nmap <M-h> :bp<CR>
+nmap <M-l> :bn<CR>
+
+""Use fzf binding
+nnoremap <C-t> :Tags <c-r><c-w><cr>
+nnoremap <C-r> :Ag <c-r><c-w><cr>
 
 ""Settings for YCM
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
@@ -117,10 +120,10 @@ let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 
 ""Settings for smooth scrolling
 let g:comfortable_motion_no_default_key_mappings = 0
-nnoremap <silent> <M-j> :call comfortable_motion#flick(100)<CR>
-nnoremap <silent> <M-k> :call comfortable_motion#flick(-100)<CR>
-nnoremap <silent> <M-J> :call comfortable_motion#flick(200)<CR>
-nnoremap <silent> <M-K> :call comfortable_motion#flick(-200)<CR>
+nnoremap <silent> <C-j> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-k> :call comfortable_motion#flick(-100)<CR>
+nnoremap <silent> <C-J> :call comfortable_motion#flick(200)<CR>
+nnoremap <silent> <C-K> :call comfortable_motion#flick(-200)<CR>
 
 "" Julia filetype support
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
