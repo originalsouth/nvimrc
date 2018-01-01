@@ -93,6 +93,9 @@ imap <M-\> <Esc>
 nmap <M-k> :bd<CR>
 nmap <M-h> :bp<CR>
 nmap <M-l> :bn<CR>
+nmap <M-Up> :bd<CR>
+nmap <M-Left> :bp<CR>
+nmap <M-Right> :bn<CR>
 
 ""Use fzf binding
 nnoremap <C-t> :Tags <c-r><c-w><cr>
