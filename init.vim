@@ -1,4 +1,4 @@
-let g:python3_host_prog='/usr/bin/python2'
+let g:python2_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
 call plug#begin()
@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
-"Plug 'lyuts/vim-rtags'
+Plug 'lyuts/vim-rtags'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
@@ -24,7 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/HJKL'
 Plug 'w0rp/ale'
-Plug 'yuttie/comfortable-motion.vim'
+"Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 "Use colorscheme
@@ -122,11 +122,11 @@ let g:ale_linters = { 'c': ['gcc','clang','cppcheck'], 'cpp': ['gcc','clang','cp
 let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 
 ""Settings for smooth scrolling
-let g:comfortable_motion_no_default_key_mappings = 0
-nnoremap <silent> <C-j> :call comfortable_motion#flick(100)<CR>
-nnoremap <silent> <C-k> :call comfortable_motion#flick(-100)<CR>
-nnoremap <silent> <C-J> :call comfortable_motion#flick(200)<CR>
-nnoremap <silent> <C-K> :call comfortable_motion#flick(-200)<CR>
+"let g:comfortable_motion_no_default_key_mappings = 0
+"nnoremap <silent> <C-j> :call comfortable_motion#flick(100)<CR>
+"nnoremap <silent> <C-k> :call comfortable_motion#flick(-100)<CR>
+"nnoremap <silent> <C-J> :call comfortable_motion#flick(200)<CR>
+"nnoremap <silent> <C-K> :call comfortable_motion#flick(-200)<CR>
 
 "" Julia filetype support
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
