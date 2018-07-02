@@ -128,11 +128,25 @@ let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 "nnoremap <silent> <C-J> :call comfortable_motion#flick(200)<CR>
 "nnoremap <silent> <C-K> :call comfortable_motion#flick(-200)<CR>
 
-"" Julia filetype support
+""Julia filetype support
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
 
+""GitGutter
+set updatetime=100
+function! GlobalChangedLines(ex_cmd)
+  for hunk in GitGutterGetHunks()
+    for lnum in range(hunk[2], hunk[2]+hunk[3]-1)
+      let cursor = getcurpos()
+      silent! execute lnum.a:ex_cmd
+      call setpos('.', cursor)
+    endfor
+  endfor
+endfunction
+command -nargs=1 Glines call GlobalChangedLines(<q-args>)
+
 ""Strip dead spaces
-au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
+"au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
+au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :Glines s/\s\+$//
 
 ""Auto spell
 au FileType tex set spell
