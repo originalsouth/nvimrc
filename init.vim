@@ -119,7 +119,7 @@ let g:chromatica#responsive_mode=1
 let g:ale_c_clang_options = '-std=c11 -Wall -Wextra'
 let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
 let g:ale_linters = { 'c': ['gcc','clang','cppcheck'], 'cpp': ['gcc','clang','cpplint','cppcheck'], 'python': ['flake8'] }
-let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
+let g:ale_python_flake8_options = '--select=F --ignore=F403,F405'
 
 ""Julia filetype support
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
