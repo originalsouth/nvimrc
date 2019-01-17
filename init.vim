@@ -24,7 +24,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/HJKL'
 Plug 'w0rp/ale'
-"Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 "Use colorscheme
@@ -35,12 +34,12 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 
 "Set more things
 set autochdir "Automatically change directory to file's directory
-set autoindent smartindent "Auto indent 
+set autoindent smartindent "Auto indent
 set autoread "Automatically update file
 set autowrite "Save before you :make
 set cul "Highlight current linse
 set encoding=utf8 "Set encoding as UTF-8
-set expandtab "Use space instead of tabs 
+set expandtab "Use space instead of tabs
 set ffs=unix,dos,mac "Set file format
 set hidden "Hide buffer instead of closing it
 set history=10000 "Store this number of lines
@@ -61,7 +60,7 @@ set showmatch "Show matching brackets
 set splitbelow "Horizontal splits below
 set splitright "Vertical splits at right side
 set tabstop=4 "Tab size
-set undolevels=1000 "We like a big undo level 
+set undolevels=1000 "We like a big undo level
 set visualbell "Use a visual bell
 set wildmenu "Use tab completion
 set wildmode=longest,list,full "Tab completion mode
@@ -77,7 +76,7 @@ let g:airline#extensions#tabline#enabled = 1
 au BufRead,BufNewFile *.pde,*.ino set filetype=c++
 
 ""Activate rainbow brackets
-let g:rainbow_active = 1 
+let g:rainbow_active = 1
 let g:rainbow_conf = { 'guifgs' : [ '#aaaaaa', '#00aa00', '#00aaaa', '#aaaa00', '#aa00aa', '#0000aa', '#aa0000' ] }
 
 ""Key bindings
@@ -121,13 +120,6 @@ let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
 let g:ale_linters = { 'c': ['gcc','clang','cppcheck'], 'cpp': ['gcc','clang','cpplint','cppcheck'], 'python': ['flake8'] }
 let g:ale_python_flake8_args = '--select=F --ignore=F403,F405'
 
-""Settings for smooth scrolling
-"let g:comfortable_motion_no_default_key_mappings = 0
-"nnoremap <silent> <C-j> :call comfortable_motion#flick(100)<CR>
-"nnoremap <silent> <C-k> :call comfortable_motion#flick(-100)<CR>
-"nnoremap <silent> <C-J> :call comfortable_motion#flick(200)<CR>
-"nnoremap <silent> <C-K> :call comfortable_motion#flick(-200)<CR>
-
 ""Julia filetype support
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
 
@@ -147,10 +139,12 @@ command -nargs=1 Glines call GlobalChangedLines(<q-args>)
 ""Strip dead spaces
 "au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
 au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :Glines s/\s\+$//
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 ""Auto spell
-au FileType tex set spell
-au FileType tex syntax spell toplevel
+au FileType latex,tex,plaintex set spell
+au FileType latex,tex,plaintex syntax spell toplevel
 au TermOpen * set nospell
 
 ""Sync X clipboard with vim
