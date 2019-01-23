@@ -1,9 +1,8 @@
-let g:python2_host_prog='/usr/bin/python2'
+let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
 call plug#begin()
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --clang-completer --tern-completer --system-libclang'}
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arakashic/chromatica.nvim'
@@ -101,24 +100,10 @@ nmap <M-Right> :bn<CR>
 nnoremap <C-t> :Tags <c-r><c-w><cr>
 nnoremap <M-t> :Ag <c-r><c-w><cr>
 
-""Settings for YCM
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_always_populate_location_list = 1
-"let g:ycm_collect_identifiers_from_tags_files = 1
-
-""Settings for Chromatica
-let g:chromatica#libclang_path='/usr/lib/libclang.so'
-"let g:chromatica#enable_at_startup=1
-"let g:chromatica#highlight_feature_level=1
-let g:chromatica#responsive_mode=1
-
 ""Settings for ALE
-let g:ale_c_clang_options = '-std=c11 -Wall -Wextra'
-let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra'
-let g:ale_linters = { 'c': ['gcc','clang','cppcheck'], 'cpp': ['gcc','clang','cpplint','cppcheck'], 'python': ['flake8'] }
+let g:ale_c_clang_options = '-std=c18 -Wall -Wextra'
+let g:ale_cpp_clang_options = '-std=c++17 -Wall -Wextra'
+let g:ale_linters = { 'python': ['flake8'] }
 let g:ale_python_flake8_options = '--select=F --ignore=F403,F405'
 
 ""Julia filetype support
