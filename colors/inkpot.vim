@@ -26,7 +26,7 @@ hi Delimiter       guifg=#c080d0     guibg=NONE      guisp=NONE      gui=NONE
 hi Directory       guifg=#00ff8b     guibg=NONE      guisp=NONE      gui=NONE
 hi EnumerationName guifg=#9ccfe8     guibg=NONE      guisp=NONE      gui=NONE
 hi Exception       guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
-hi Function        guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE 
+hi Function        guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
 hi Identifier      guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
 hi Include         guifg=#409090     guibg=NONE      guisp=NONE      gui=NONE
 hi Keyword         guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
@@ -35,7 +35,7 @@ hi Macro           guifg=#409090     guibg=NONE      guisp=NONE      gui=NONE
 hi Special         guifg=#c080d0     guibg=NONE      guisp=NONE      gui=NONE
 hi SpecialComment  guifg=#c080d0     guibg=NONE      guisp=NONE      gui=NONE
 hi Statement       guifg=#808bed     guibg=NONE      guisp=NONE      gui=NONE
-hi StorageClass    guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE 
+hi StorageClass    guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
 hi Structure       guifg=#ff8bff     guibg=NONE      guisp=NONE      gui=NONE
 hi Tag             guifg=#c080d0     guibg=NONE      guisp=NONE      gui=NONE
 hi Todo            guifg=#303030     guibg=#d0a060   guisp=#d0a060   gui=NONE
@@ -48,7 +48,7 @@ hi Warning         guifg=#ffffff     guibg=#ce8e4e   guisp=#6e2e2e   gui=NONE
 
 "Types
 hi Boolean           guifg=#808bed   guibg=NONE      guisp=NONE      gui=NONE
-hi Character         guifg=#ffcd8b   guibg=NONE      guisp=NONE      gui=NONE 
+hi Character         guifg=#ffcd8b   guibg=NONE      guisp=NONE      gui=NONE
 hi Comment           guifg=#cd8b00   guibg=NONE      guisp=NONE      gui=NONE
 hi Constant          guifg=#aa8c11   guibg=NONE      guisp=NONE      gui=NONE
 hi EnumerationValue  guifg=#6c7fcc   guibg=NONE      guisp=NONE      gui=NONE

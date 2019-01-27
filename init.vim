@@ -11,6 +11,7 @@ Plug 'arecarn/vim-selection'
 Plug 'fgrsnau/ncm2-aspell'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
 Plug 'lyuts/vim-rtags'
@@ -25,6 +26,7 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-pyclang'
 Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-tern'
+Plug 'ncm2/ncm2-tagprefix'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'roxma/nvim-yarp'
@@ -88,7 +90,7 @@ au BufRead,BufNewFile *.pde,*.ino set filetype=c++
 
 ""Activate rainbow brackets
 let g:rainbow_active = 1
-let g:rainbow_conf = { 'guifgs' : [ '#aaaaaa', '#00aa00', '#00aaaa', '#aaaa00', '#aa00aa', '#0000aa', '#aa0000' ] }
+let g:rbinbow_conf = { 'guifgs' : [ '#bbbbbb', '#00bb00', '#00bbbb', '#bbbb00', '#bb00bb', '#0000bb', '#bb0000' ] }
 
 ""Key bindings
 nmap <M-u> :UndotreeToggle<CR>
