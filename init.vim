@@ -8,7 +8,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arakashic/chromatica.nvim'
 Plug 'arecarn/crunch.vim'
 Plug 'arecarn/vim-selection'
-Plug 'fgrsnau/ncm2-aspell'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
@@ -18,20 +17,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-github'
-Plug 'ncm2/ncm2-gtags'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-pyclang'
-Plug 'ncm2/ncm2-racer'
-Plug 'ncm2/ncm2-syntax'
-Plug 'ncm2/ncm2-tagprefix'
-Plug 'ncm2/ncm2-tern'
-Plug 'ncm2/ncm2-tmux'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'roxma/nvim-yarp'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
@@ -114,14 +100,6 @@ nmap <M-Right> :bn<CR>
 ""Use fzf binding
 nnoremap <C-t> :Tags <c-r><c-w><cr>
 nnoremap <M-t> :Ag <c-r><c-w><cr>
-
-""Setting for NPM2
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-set shortmess+=c
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 ""Settings for ALE
 let g:ale_c_clang_options = '-std=c18 -Wall -Wextra'
