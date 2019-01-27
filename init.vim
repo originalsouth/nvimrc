@@ -6,7 +6,6 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --clang-completer --tern-completer --system-libclang'}
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
-Plug 'arakashic/chromatica.nvim'
 Plug 'arecarn/crunch.vim'
 Plug 'arecarn/vim-selection'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
