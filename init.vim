@@ -3,6 +3,7 @@ let g:python3_host_prog='/usr/bin/python3'
 
 call plug#begin()
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --clang-completer --tern-completer --system-libclang'}
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'airblade/vim-gitgutter'
 Plug 'arakashic/chromatica.nvim'
@@ -124,6 +125,12 @@ function! GlobalChangedLines(ex_cmd)
   endfor
 endfunction
 command -nargs=1 Glines call GlobalChangedLines(<q-args>)
+
+""Settings for YCM
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 ""Strip dead spaces
 "au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
