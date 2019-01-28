@@ -4,7 +4,7 @@ let g:python3_host_prog='/usr/bin/python3'
 call plug#begin()
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --clang-completer --tern-completer --system-libclang'}
-Plug 'Yggdroot/indentLine', { 'for': 'python' }
+Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'arecarn/vim-selection'
@@ -141,6 +141,10 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 au FileType latex,tex,plaintex set spell
 au FileType latex,tex,plaintex syntax spell toplevel
 au TermOpen * set nospell
+
+""IndentLine for Python only
+let g:indentLine_enabled = 0
+au FileType python :IndentLinesToggle
 
 ""Sync X clipboard with vim
 set clipboard^=unnamed,unnamedplus
