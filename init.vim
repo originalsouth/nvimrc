@@ -2,7 +2,6 @@ let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
 call plug#begin()
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
@@ -37,6 +36,7 @@ Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'roxma/nvim-yarp'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
@@ -47,7 +47,7 @@ Plug 'w0rp/ale'
 call plug#end()
 
 "Use colorscheme
-colorscheme inkpot "Use color scheme 'inkpot'
+colorscheme inkpot
 
 "Set cursor
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
