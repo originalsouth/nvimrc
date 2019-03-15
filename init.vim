@@ -2,11 +2,13 @@ let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
 call plug#begin()
+Plug 'Shougo/neco-syntax'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'arecarn/vim-selection'
 Plug 'fgrsnau/ncm2-aspell'
+Plug 'fgrsnau/ncm2-otherbuf', { 'branch': 'ncm2' }
 Plug 'filipekiss/ncm2-look.vim'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
@@ -30,7 +32,7 @@ Plug 'ncm2/ncm2-markdown-subscope'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-pyclang'
 Plug 'ncm2/ncm2-racer'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+Plug 'ncm2/ncm2-syntax'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-vim'
@@ -47,7 +49,7 @@ Plug 'w0rp/ale'
 call plug#end()
 
 "Use colorscheme
-colorscheme inkpot
+colorscheme inkwheel
 
 "Set cursor
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -120,6 +122,9 @@ nmap <M-Right> :bn<CR>
 nnoremap <C-t> :Tags <c-r><c-w><cr>
 nnoremap <M-t> :Ag <c-r><c-w><cr>
 
+""Settings for Polyglot
+let g:polyglot_disabled = ['c/c++','c++11']
+
 ""Settings for ALE
 let g:ale_c_clang_options = '-std=c18 -Wall -Wextra'
 let g:ale_c_gcc_options = '-std=c18 -Wall -Wextra'
@@ -159,6 +164,9 @@ autocmd FileType c,cpp nnoremap <buffer> gd :<c-u>call ncm2_pyclang#goto_declara
 au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :Glines s/\s\+$//
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+"Output the current syntax group
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 ""Auto spell
 au FileType latex,tex,plaintex set spell
