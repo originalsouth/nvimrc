@@ -122,9 +122,6 @@ nmap <M-Right> :bn<CR>
 nnoremap <C-t> :Tags <c-r><c-w><cr>
 nnoremap <M-t> :Ag <c-r><c-w><cr>
 
-""Settings for Polyglot
-let g:polyglot_disabled = ['c/c++','c++11']
-
 ""Settings for ALE
 let g:ale_c_clang_options = '-std=c18 -Wall -Wextra'
 let g:ale_c_gcc_options = '-std=c18 -Wall -Wextra'

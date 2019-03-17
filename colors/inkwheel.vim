@@ -1,9 +1,12 @@
 hi clear
+if exists("syntax_on")
+    syntax reset
+endif
 let g:colors_name="inkwheel"
 set termguicolors
 set background=dark
 
-hi Boolean            guifg=#8b8bff   guibg=none      guisp=none      gui=none
+hi Boolean            guifg=#00aaff   guibg=none      guisp=none      gui=none
 hi Character          guifg=#ffcd8b   guibg=none      guisp=none      gui=none
 hi ColorColumn        guifg=none      guibg=none      guisp=none      gui=none
 hi Comment            guifg=#cd8b00   guibg=none      guisp=none      gui=none
@@ -26,7 +29,7 @@ hi DiffChange         guifg=#306d30   guibg=#ffa500   guisp=none      gui=bold
 hi DiffDelete         guifg=#306d30   guibg=#ff0000   guisp=none      gui=bold
 hi DiffText           guifg=#306d30   guibg=#ffffcd   guisp=none      gui=bold
 hi Directory          guifg=#00ff8b   guibg=none      guisp=none      gui=none
-hi EndOfBuffer        guifg=#000000   guibg=none      guisp=none      gui=none
+hi EndOfBuffer        guifg=#000000   guibg=none      guisp=none      gui=bold
 hi EnumerationName    guifg=#9ccfe8   guibg=none      guisp=none      gui=none
 hi EnumerationValue   guifg=#6c7fcc   guibg=none      guisp=none      gui=none
 hi Error              guifg=#ffffff   guibg=#fe6e6e   guisp=none      gui=bold
@@ -35,7 +38,7 @@ hi Exception          guifg=#ff0b00   guibg=none      guisp=none      gui=none
 hi Float              guifg=#eb2121   guibg=none      guisp=none      gui=none
 hi FoldColumn         guifg=#8b8bcd   guibg=#2e2e2e   guisp=none      gui=none
 hi Folded             guifg=#cfcfcd   guibg=#4b208f   guisp=none      gui=none
-hi Function           guifg=#ff00ff   guibg=none      guisp=none      gui=none
+hi Function           guifg=#ee00ee   guibg=none      guisp=none      gui=none
 hi GitGutterAdd       guifg=#009900   guibg=#2e2e2e   guisp=none      gui=bold
 hi GitGutterChange    guifg=#bbbb00   guibg=#2e2e2e   guisp=none      gui=bold
 hi GitGutterDelete    guifg=#ff2222   guibg=#2e2e2e   guisp=none      gui=bold
@@ -43,7 +46,7 @@ hi Identifier         guifg=#ff1d80   guibg=none      guisp=none      gui=none
 hi Ignore             guifg=#000000   guibg=none      guisp=none      gui=none
 hi IncSearch          guifg=#303030   guibg=#cd8b60   guisp=none      gui=none
 hi Include            guifg=#409091   guibg=none      guisp=none      gui=none
-hi Keyword            guifg=#ff44ff   guibg=none      guisp=none      gui=none
+hi Keyword            guifg=#00eeee   guibg=none      guisp=none      gui=none
 hi Label              guifg=#aa11aa   guibg=none      guisp=none      gui=none
 hi LineNr             guifg=#8b8bcd   guibg=#2e2e2e   guisp=#2e2e2e   gui=none
 hi Macro              guifg=#4c7fdd   guibg=none      guisp=none      gui=none
