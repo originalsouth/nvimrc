@@ -7,9 +7,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'arecarn/vim-selection'
-Plug 'fgrsnau/ncm2-aspell'
-Plug 'fgrsnau/ncm2-otherbuf', { 'branch': 'ncm2' }
-Plug 'filipekiss/ncm2-look.vim'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -20,22 +17,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-github'
-Plug 'ncm2/ncm2-gtags'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-markdown-subscope'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-pyclang'
-Plug 'ncm2/ncm2-racer'
-Plug 'ncm2/ncm2-syntax'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-vim'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'roxma/nvim-yarp'
 Plug 'sheerun/vim-polyglot'
@@ -59,7 +41,7 @@ set autochdir "Automatically change directory to file's directory
 set autoindent smartindent "Auto indent
 set autoread "Automatically update file
 set autowrite "Save before you :make
-set cul "Highlight current linse
+set cul "Highlight current line
 set encoding=utf8 "Set encoding as UTF-8
 set expandtab "Use space instead of tabs
 set ffs=unix,dos,mac "Set file format
@@ -86,6 +68,7 @@ set undolevels=1000 "We like a big undo level
 set visualbell "Use a visual bell
 set wildmenu "Use tab completion
 set wildmode=longest,list,full "Tab completion mode
+
 
 "" Enable file indentation
 filetype indent plugin on
@@ -120,7 +103,7 @@ nmap <M-Right> :bn<CR>
 
 ""Use fzf binding
 nnoremap <C-t> :Tags <c-r><c-w><cr>
-nnoremap <M-t> :Ag <c-r><c-w><cr>
+nnoremap <M-t> :Rg <c-r><c-w><cr>
 
 ""Settings for ALE
 let g:ale_c_clang_options = '-std=c18 -Wall -Wextra'
@@ -146,15 +129,55 @@ function! GlobalChangedLines(ex_cmd)
 endfunction
 command -nargs=1 Glines call GlobalChangedLines(<q-args>)
 
-""Settings for NCM2
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-set shortmess+=c
-inoremap <c-c> <ESC>
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-autocmd FileType c,cpp nnoremap <buffer> gd :<c-u>call ncm2_pyclang#goto_declaration()<cr>
+""Setting for coc.nvim
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+" Remap for format selected region
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+" Use `:Fold` for fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 ""Strip dead spaces
 "au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -176,3 +199,10 @@ au FileType python :IndentLinesToggle
 
 ""Sync X clipboard with vim
 set clipboard^=unnamed,unnamedplus
+
+""CPP enhanced highlighting
+let g:cpp_class_decl_highlight = 1
+let g:cpp_class_scope_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_member_variable_highlight = 1
+"let g:cpp_experimental_simple_template_highlight = 1

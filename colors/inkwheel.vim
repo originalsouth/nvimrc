@@ -1,16 +1,19 @@
 hi clear
+set background=dark
 if exists("syntax_on")
     syntax reset
 endif
-let g:colors_name="inkwheel"
 set termguicolors
-set background=dark
+let g:colors_name="inkwheel"
 
+hi ALEErrorSign       guifg=#ff0000   guibg=#2e2e2e   guisp=none      gui=bold
+hi ALEStyleErrorSign  guifg=#409090   guibg=#2e2e2e   guisp=none      gui=bold
+hi ALEWarningSign     guifg=#ffa500   guibg=#2e2e2e   guisp=none      gui=bold
 hi Boolean            guifg=#00aaff   guibg=none      guisp=none      gui=none
 hi Character          guifg=#ffcd8b   guibg=none      guisp=none      gui=none
 hi ColorColumn        guifg=none      guibg=none      guisp=none      gui=none
 hi Comment            guifg=#cd8b00   guibg=none      guisp=none      gui=none
-hi CommentEmail       guifg=#70a0ff   guibg=none      guisp=none      gui=underline
+hi CommentEmail       guifg=#70a0ff   guibg=none      guisp=none      gui=underline,italic
 hi CommentURL         guifg=#70a0ff   guibg=none      guisp=none      gui=underline
 hi Conceal            guifg=#cfbfad   guibg=none      guisp=none      gui=none
 hi Conditional        guifg=#70a0ff   guibg=none      guisp=none      gui=none
@@ -47,7 +50,7 @@ hi Ignore             guifg=#000000   guibg=none      guisp=none      gui=none
 hi IncSearch          guifg=#303030   guibg=#cd8b60   guisp=none      gui=none
 hi Include            guifg=#409091   guibg=none      guisp=none      gui=none
 hi Keyword            guifg=#00eeee   guibg=none      guisp=none      gui=none
-hi Label              guifg=#aa11aa   guibg=none      guisp=none      gui=none
+hi Label              guifg=#8fff8b   guibg=none      guisp=none      gui=none
 hi LineNr             guifg=#8b8bcd   guibg=#2e2e2e   guisp=#2e2e2e   gui=none
 hi Macro              guifg=#4c7fdd   guibg=none      guisp=none      gui=none
 hi MatchParen         guifg=#404040   guibg=#8fff8b   guisp=none      gui=bold
@@ -87,13 +90,13 @@ hi TabLine            guifg=none      guibg=none      guisp=none      gui=none
 hi TabLineFill        guifg=none      guibg=none      guisp=none      gui=none
 hi TabLineSel         guifg=none      guibg=none      guisp=none      gui=none
 hi Tag                guifg=#c080d0   guibg=none      guisp=none      gui=none
-hi Title              guifg=#af4f4b   guibg=none      guisp=none      gui=none
+hi Title              guifg=#ffffff   guibg=none      guisp=none      gui=bold
 hi Todo               guifg=#d0a060   guibg=#303030   guisp=none      gui=bold
 hi Type               guifg=#2baa2b   guibg=none      guisp=none      gui=none
 hi Typedef            guifg=#ff8bff   guibg=none      guisp=none      gui=none
 hi Underlined         guifg=#df9f2d   guibg=none      guisp=none      gui=none
 hi Union              guifg=#ab2ace   guibg=none      guisp=none      gui=none
-hi VertSplit          guifg=#1e1e27   guibg=#1e1e27   guisp=none      gui=none
+hi VertSplit          guifg=#2e2e2e   guibg=#2e2e2e   guisp=none      gui=none
 hi Visual             guifg=#eeee88   guibg=#4e4e8f   guisp=none      gui=none
 hi VisualNOS          guifg=#eeee88   guibg=#4e4e8f   guisp=none      gui=none
 hi Warning            guifg=#ffffff   guibg=#ce8e4e   guisp=none      gui=bold
