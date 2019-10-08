@@ -5,6 +5,7 @@ if exists("syntax_on")
 endif
 set termguicolors
 let g:colors_name="inkwheel"
+let g:Bcg='none'
 
 hi ALEErrorSign       guifg=#ff0000   guibg=#2e2e2e   guisp=none      gui=bold
 hi ALEStyleErrorSign  guifg=#409090   guibg=#2e2e2e   guisp=none      gui=bold
@@ -57,7 +58,7 @@ hi MatchParen         guifg=#404040   guibg=#8fff8b   guisp=none      gui=bold
 hi ModeMsg            guifg=#7e7eae   guibg=none      guisp=none      gui=none
 hi MoreMsg            guifg=#7e7eae   guibg=none      guisp=none      gui=none
 hi NonText            guifg=#8b8bcd   guibg=none      guisp=none      gui=none
-hi Normal             guifg=#cfbfad   guibg=#1e1e27   guisp=#1e1e27   gui=none
+hi Normal             guifg=#cfbfad   guibg=none      guisp=#1e1e27   gui=none
 hi Number             guifg=#f0ad6d   guibg=none      guisp=none      gui=none
 hi Operator           guifg=#4080a0   guibg=none      guisp=none      gui=none
 hi Pmenu              guifg=#eeeeee   guibg=#4e4e8f   guisp=none      gui=none
@@ -102,3 +103,12 @@ hi VisualNOS          guifg=#eeee88   guibg=#4e4e8f   guisp=none      gui=none
 hi Warning            guifg=#ffffff   guibg=#ce8e4e   guisp=none      gui=bold
 hi WarningMsg         guifg=#ffffff   guibg=#ce8e4e   guisp=none      gui=bold
 hi WildMenu           guifg=#eeeeee   guibg=#6e6eaf   guisp=none      gui=none
+fu! BcgMap()
+    if g:Bcg==?'none'
+        let g:Bcg='#1e1e27'
+    else
+        let g:Bcg='none'
+    endif
+    exe 'hi Normal guibg='.g:Bcg
+endfu
+nmap <M-!> :call BcgMap()<cr>
