@@ -60,6 +60,7 @@ set ruler "Show cursur position all the time
 set shiftwidth=4 "Tab size
 set showcmd "Display incomplete commands
 set showmatch "Show matching brackets
+
 set splitbelow "Horizontal splits below
 set splitright "Vertical splits at right side
 set tabstop=4 "Tab size
@@ -205,3 +206,6 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_member_variable_highlight = 1
 "let g:cpp_experimental_simple_template_highlight = 1
+
+""latex specific
+let g:tex_flavor = 'latex'
