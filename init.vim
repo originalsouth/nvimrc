@@ -36,7 +36,7 @@ colorscheme inkwheel
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 "Set more things
-set autochdir "Automatically change directory to file's directory
+"set autochdir "Automatically change directory to file's directory
 set autoindent smartindent "Auto indent
 set autoread "Automatically update file
 set autowrite "Save before you :make
