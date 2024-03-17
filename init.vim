@@ -6,7 +6,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'arecarn/crunch.vim'
 Plug 'arecarn/vim-selection'
-Plug 'jsfaint/gen_tags.vim'
+"Plug 'jsfaint/gen_tags.vim'
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
@@ -35,6 +35,7 @@ colorscheme inkwheel
 
 "Set cursor
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+"set guifont=Soure\ Code\ Pro:h14
 
 "Set more things
 "set autochdir "Automatically change directory to file's directory
@@ -179,6 +180,22 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 command! -nargs=0 Format :call CocAction('format')
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 ""Strip dead spaces
 "au FileType c,cpp,java,php,javascript,julia,rust,python,tex autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -214,20 +231,23 @@ let g:tex_flavor = 'latex'
 ""NVIM 0.6 madness
 unmap Y
 
+""Disable ALE for Julia (as COC does the same thing better)
+au FileType julia autocmd BufWritePre <buffer> :ALEDisableBuffer
+
 ""treesitter
-""lua <<EOF
-""require'nvim-treesitter.configs'.setup {
-""  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-""  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-""  ignore_install = { }, -- List of parsers to ignore installing
-""  highlight = {
-""    enable = true,              -- false will disable the whole extension
-""    disable = { },  -- list of language that will be disabled
-""    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-""    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-""    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-""    -- Instead of true it can also be a list of languages
-""    additional_vim_regex_highlighting = false,
-""  },
-""}
-""EOF
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+"  ignore_install = { }, -- List of parsers to ignore installing
+"  highlight = {
+"    enable = true,              -- false will disable the whole extension
+"    disable = { },  -- list of language that will be disabled
+"    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+"    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+"    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+"    -- Instead of true it can also be a list of languages
+"    additional_vim_regex_highlighting = false,
+"  },
+"}
+"EOF

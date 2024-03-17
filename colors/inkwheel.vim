@@ -84,8 +84,7 @@ hi StatusLine         guifg=#b9b9b9   guibg=#3e3e5e   guisp=none      gui=bold
 hi StatusLineNC       guifg=#b9b9b9   guibg=#3e3e5e   guisp=none      gui=none
 hi StorageClass       guifg=#aaaa00   guibg=none      guisp=none      gui=none
 hi String             guifg=#ffbb11   guibg=none      guisp=none      gui=none
-hi String             guifg=#ffbb11   guibg=none      guisp=none      gui=none
-hi StringDelimiter    guifg=#ffcc11   guibg=none      guisp=none      gui=none
+hi StringDelimiter    guifg=#aa8811   guibg=none      guisp=none      gui=none
 hi Structure          guifg=#aa88ff   guibg=none      guisp=none      gui=none
 hi TabLine            guifg=none      guibg=none      guisp=none      gui=none
 hi TabLineFill        guifg=none      guibg=none      guisp=none      gui=none
@@ -112,3 +111,53 @@ fu! BcgMap()
     exe 'hi Normal guibg='.g:Bcg
 endfu
 nmap <M-!> :call BcgMap()<cr>
+
+"hi TSAnnotation
+"hi TSAttribute
+hi TSBoolean             guifg=#00aaff   guibg=none      guisp=none      gui=none
+hi TSCharacter           guifg=#ffcd8b   guibg=none      guisp=none      gui=none
+hi TSConditional         guifg=#70a0ff   guibg=none      guisp=none      gui=none
+hi TSConstBuiltin        guifg=#666600   guibg=none      guisp=none      gui=none
+hi TSConstMacro          guifg=#4c7fdd   guibg=none      guisp=none      gui=none
+hi TSConstant            guifg=#999900   guibg=none      guisp=none      gui=none
+hi TSConstructor         guifg=#2baa2b   guibg=none      guisp=none      gui=none
+"hi TSEmphasis
+hi TSError               guifg=#ff0000   guibg=#2e2e2e   guisp=none      gui=bold
+hi TSException           guifg=#ff0b00   guibg=none      guisp=none      gui=none
+"hi TSField
+hi TSFloat               guifg=#eb2121   guibg=none      guisp=none      gui=none
+hi TSFuncBuiltin         guifg=#ee00ee   guibg=none      guisp=none      gui=none
+hi TSFuncMacro           guifg=#ee00ee   guibg=none      guisp=none      gui=none
+hi TSFunction            guifg=#ee00ee   guibg=none      guisp=none      gui=none
+hi TSInclude             guifg=#409091   guibg=none      guisp=none      gui=none
+hi TSKeyword             guifg=#00eeee   guibg=none      guisp=none      gui=none
+hi TSKeywordFunction     guifg=#00eeee   guibg=none      guisp=none      gui=none
+hi TSKeywordOperator     guifg=#4080a0   guibg=none      guisp=none      gui=none
+hi TSLabel               guifg=#8fff8b   guibg=none      guisp=none      gui=none
+"hi TSLiteral
+"hi TSMethod
+hi TSNamespace           guifg=#a020d0   guibg=none      guisp=none      gui=none
+hi TSNumber              guifg=#f0ad6d   guibg=none      guisp=none      gui=none
+hi TSOperator            guifg=#4080a0   guibg=none      guisp=none      gui=none
+"hi TSParameter
+"hi TSParameterReference
+"hi TSProperty
+hi TSPunctBracket        guifg=#a020d0   guibg=none      guisp=none      gui=none
+hi TSPunctDelimiter      guifg=#aa8811   guibg=none      guisp=none      gui=none
+hi TSPunctSpecial        guifg=#c080d0   guibg=none      guisp=none      gui=none
+hi TSRepeat              guifg=#ee8800   guibg=none      guisp=none      gui=none
+hi TSString              guifg=#ffbb11   guibg=none      guisp=none      gui=none
+hi TSStringEscape        guifg=#ffbb11   guibg=none      guisp=none      gui=none
+hi TSStringRegex         guifg=#ffbb11   guibg=none      guisp=none      gui=none
+hi TSStrong              guifg=#ffbb11   guibg=none      guisp=none      gui=bold
+hi TSStructure           guifg=#aa88ff   guibg=none      guisp=none      gui=none
+hi TSTag                 guifg=#c080d0   guibg=none      guisp=none      gui=none
+hi TSTagDelimiter        guifg=#c080d0   guibg=none      guisp=none      gui=none
+hi TSText                guifg=#8b8bcd   guibg=none      guisp=none      gui=none
+hi TSTitle               guifg=#ffffff   guibg=none      guisp=none      gui=bold
+hi TSType                guifg=#2baa2b   guibg=none      guisp=none      gui=none
+hi TSTypeBuiltin         guifg=#2baa2b   guibg=none      guisp=none      gui=none
+hi TSURI                 guifg=#70a0ff   guibg=none      guisp=none      gui=underline
+hi TSUnderline           guifg=#df9f2d   guibg=none      guisp=none      gui=none
+"hi TSVariable
+"hi TSVariableBuiltin
